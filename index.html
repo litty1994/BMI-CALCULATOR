@@ -12,19 +12,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
-            <div class="col-md-6">
+            <div class="col-md-6 ">
                 <form>
-                    <h2 class="text-center  text-primary">BMI Calculator</h2>
+                    <h2 class="text-center  text-primary m-5">BMI Calculator</h2>
                     <div class="row mb-3">
                       <label for="height" class="col-sm-2 col-form-label ">Height</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control " id="height" placeholder="Please enter height in cm">
+                        <input type="text"  id="height" placeholder="Please enter height in cm">
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <label for="weight" class="col-sm-2 col-form-label">Weight</label>
+                      <label for="weight" class="col-sm-2 col-form-label ">Weight</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control " id="weight"placeholder="Please enter weight in kg">
+                        <input type="text"  id="weight" placeholder="Please enter weight in kg">
                       </div>
                     </div>
                     <fieldset class="row mb-3">
@@ -45,9 +45,12 @@
                         
                       </div>
                     </fieldset>
-
-                    <button type="submit" class="btn btn-primary  m-5"onclick="calculate()">Calculate</button>
-                    <div id="result" ></div>
+                    <div class="text-center">
+                    <button type="button" class="btn btn-primary  m-5"onclick="calculate()">Calculate</button>
+                  </div>
+                    <div id="result" >
+                      <h3 class="text-center text-danger mb-5" id="r1" ></h3>
+                    </div>
                     
                   </form>
             </div>
@@ -58,30 +61,39 @@
 <script>
     function calculate()
     {
+      
+    
         let height1=height.value
         let weight1=weight.value
+       if(height1!==''&&weight1!=='')
+       {
         let h2=height1/100
         let bmi=(weight1/(h2*h2)).toFixed(2)
        
         if(bmi<18.5)
     {
-        alert(`BMI=${bmi},You have under weight`)
-       // result.innerHTML=`${bmi}:underweight`
+       
+        r1.innerHTML=`BMI=${bmi};You have underweight`
 
     }
     else if(bmi>=18.5&&bmi<=25)
     {
-        alert(`BMI=${bmi},You have Normal weight`)
+        r1.innerHTML=`BMI=${bmi};You have Normal weight`
     }
     else if(bmi>25&&bmi<=35)
     {
-        alert(`BMI=${bmi},You have over weight`)
+        r1.innerHTML=`BMI=${bmi};You have over weight`
     }
     else if(bmi>35)
     {
-        alert(`BMI=${bmi},You have obese`)
+        r1.innerHTML=`BMI=${bmi};You have obese`
     }
     }
+    else
+    alert("Please enter values")
+  }
+
+  
     
 </script>
 </html>
