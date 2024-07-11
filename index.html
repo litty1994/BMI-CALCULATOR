@@ -68,6 +68,11 @@
     
         let height1=height.value
         let weight1=weight.value
+        if (isNaN(height1) || isNaN(weight1))
+        {
+          alert("please input numerical values")
+          res()
+        }
        if(height1!==''&&weight1!=='')
        {
         let h2=height1/100
