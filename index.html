@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6 ">
-                <form>
+                <form id="f1">
                     <h2 class="text-center  text-primary m-5">BMI Calculator</h2>
                     <div class="row mb-3">
                       <label for="height" class="col-sm-2 col-form-label ">Height</label>
@@ -97,12 +97,13 @@
   }
 function res()
 {
-  console.log("haaaaaaaaaaaaaaiiiiiiiiiiii");
-  height.value=""
-  weight.value=""
-  gridRadios1.value=""
-  gridRadios2.value=""
+  f1.reset()
+  //height.value=""
+  //weight.value=""
+  //gridRadios1.innerHTML=""
+  //gridRadios2.innerHTML=""
   r1.innerHTML=""
+  
   
 }
   
